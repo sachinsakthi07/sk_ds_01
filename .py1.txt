@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+age_groups = ["Kids (0-14)", "Adults (15-64)", "Seniors (65+)"]
+population = [360, 970, 98]  # in millions
+colors = ["skyblue", "lightcoral", "lightgreen"]
+plt.figure(figsize=(8, 6))
+bars = plt.bar(age_groups, population, color=colors)
+for bar in bars:
+    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 10, 
+             str(bar.get_height()), ha='center', fontsize=12, fontweight='bold')
+
